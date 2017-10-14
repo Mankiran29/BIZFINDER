@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+ <section id="banner" class="wrapper" >
+    <div class="inner" style="width:55%; border:5px 5px 5px 5px double;border-color:black;">
+        <h3 style="color:white;">Already have an account? <br/>Great!! Login Here!!<br/><br/>    </h3>
+        {% if msg == "Invalid" %}
+            <div style="color:red;">Password and confirm password are different</div>
+        {% endif %}
+        <form action="http://localhost:8000/visiter/checkNew/" method="post">
+        {% csrf_token %}
+        <div class="field">
+                <input name="nameText" id="nameText" type="text" placeholder="Name"/>
+            </div>
+        <div class="field">
+            <input name="passwordText" id="passwordtext" type="password" placeholder="password"/>
+        </div>
+        <div class="field">
+            <input name="confirmPassword" id="confirmPassword" type="password" placeholder="Confirm password"/>
+        </div>
+        <div class="field">
+            <input name="firstName" id="firstName" type="text" placeholder="First Name">
+        </div>
+        <div class="field">
+            <input name="lastName" id="lastName" type="text" placeholder="Last Name">
+        </div>
+        
+         <div class="field">
+            <input name="email" id="email" type="email" placeholder="email">
+        </div>
+        <div class="field">
+            <input name="phone" id="phone" type="text" placeholder="Phone Number">
+        </div>
+        <div class="field">
+            <input name="address" id="address" type="text" placeholder="address">
+        </div>
+      
+        <ul class="actions">
+            <li><input value="Register" class="button alt" type="submit"/></li>
+        </ul>
+            </form>
+            
+        <hr/> 
+        <ul class="actions">
+            <a href="{% url 'checkNew' %}"><li><input value="Login" class="button alt" type="submit"/></li></a>
+        </ul> 
+
+</section>
+{% endblock %}
+        

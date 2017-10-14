@@ -1,0 +1,23 @@
+{%extends 'admBaseX.html' %}
+{% block content %}
+					<div class="clearfix"></div>
+					<div class="outter-wp">
+						<div class="sub-heard-part">
+						</div>
+				            <div class="graph-visual tables-main">
+			                     <h2 class="inner-tittle">Members</h2>
+							         <div class="graph">
+								        <div class="block-page">
+
+					   {% for val in object_list %}
+					       <h5><a href='/adm/{{val.id}}'> {{val.name}}</a> - {{val.firstName}} {{val.lastName}}</h5>
+					   
+						{% endfor %}	
+					        </div>
+												
+							         </div>
+											
+				            </div>
+                    </div>
+{% endblock %}
+								

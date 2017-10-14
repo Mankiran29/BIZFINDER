@@ -1,0 +1,34 @@
+{%extends 'admBaseX.html' %}
+{% block content %}
+					<div class="clearfix"></div>
+					<div class="outter-wp">
+						<div class="sub-heard-part">
+							<ol class="breadcrumb m-b-0">
+								<li><a href="index.html">Home</a></li>
+								<li class="active">Blank Page</li>
+							</ol>
+						</div>
+				            <div class="graph-visual tables-main">
+			                     <h2 class="inner-tittle">Blank Page</h2>
+							         <div class="graph">
+								        <div class="block-page">
+					{% if msg == "done" %}
+            <div style="color:red;">Category Added</div>
+                    {% endif %}
+					<form action="http://localhost:8000/visiter/checkCate/" method="post">
+                    {% csrf_token %}
+                         <div class="field">
+                            <input name="category" id="category" type="text" placeholder="category">
+                        </div>
+                        <ul class="actions">
+                            <li><input value="ADD CATEGORY" class="button alt" type="submit"></li>
+                        </ul>
+                    </form>
+								        </div>
+												
+							         </div>
+											
+				            </div>
+                    </div>
+{% endblock %}
+								

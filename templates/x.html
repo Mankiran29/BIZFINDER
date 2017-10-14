@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for m in object_list %}
+        <h5>{{ m.name }}  </h5>
+        {{ m.phoneM }}
+            {{ m.emailM }}
+    {% endfor %}
+{% endblock %}

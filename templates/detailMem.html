@@ -1,0 +1,44 @@
+{%extends 'admBaseX.html' %}
+{% block content %}
+					<div class="clearfix"></div>
+					<div class="outter-wp">
+						<div class="sub-heard-part">
+						</div>
+				            <div class="graph-visual tables-main">
+			                     <h2 class="inner-tittle">Members</h2>
+							         <div class="graph">
+								        <div class="block-page">
+					    <table border='solid' width="75%" cellpadding='10'>
+					       <tr>
+					             <th style="padding: 5px 10px 5px 5px;">id-name</th>
+					            <td style="padding: 5px 10px 5px 5px;"> {{object.name}}</td>
+					       </tr>
+                           <tr>
+                                <th style="padding: 5px 10px 5px 5px;">Name</th>
+                                <td style="padding: 5px 10px 5px 5px;"> {{object.firstName}} {{ object.lastName}}</td>
+                           </tr>
+                           <tr>
+                                <th style="padding: 5px 10px 5px 5px;">Address</th>
+                                <td style="padding: 5px 10px 5px 5px;"> {{object.addressM}}</td>
+                           </tr>
+                          
+                           <tr>
+                                <th style="padding: 5px 10px 5px 5px;">Phone Number</th>
+                                <td style="padding: 5px 10px 5px 5px;"> {{object.phoneM}}</td>
+                           </tr>
+                           
+                           <tr>
+                                <th style="padding: 5px 10px 5px 5px;">Email</th>
+                                <td style="padding: 5px 10px 5px 5px;"> {{object.emailM}}</td>
+                           </tr>
+                      </table>
+					   
+
+					        </div>
+												
+							         </div>
+											
+				            </div>
+                    </div>
+{% endblock %}
+								

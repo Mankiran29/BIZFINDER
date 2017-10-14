@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+ <section id="banner" class="wrapper" >
+	<div class="inner" style="width:55%; border:5px 5px 5px 5px double;border-color:black;">
+		<h3 style="color:white;">Already have an account? <br/>Great!! Login Here!!<br/><br/>    </h3>
+		{% if msg == "Invalid" %}
+            <div style="color:red;">Invalid Username/Password</div>
+        {% endif %}
+		<form action="http://localhost:8000/visiter/checkLogin/" method="POST">{% csrf_token %}
+		<div class="field">
+		
+	{% csrf_token %}
+           		<input name="nameText" id="nameText" type="text" placeholder="Name"/><br/>
+           	</div>
+		<div class="field">
+			<input name="passwordText" id="passwordText" type="password" placeholder="password"/>
+		</div>
+		<div class="field">
+            <input name="check" id="check" type="checkbox" checked><p style="color:white">Remember Me!</p>
+        </div>
+		<ul class="actions">
+			<li><input value="Login" class="button alt" type="submit"/></li>
+		</ul>
+            </form>
+            
+        <hr/> 
+        <ul class="actions">
+            <a href="{% url 'newUser' %}"><li><input value="New User" class="button alt" type="submit"/></li></a>
+        </ul> 
+
+</section>
+{% endblock %}
+		

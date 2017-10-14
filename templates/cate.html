@@ -1,0 +1,33 @@
+{%extends 'admBaseX.html' %}
+{% block content %}
+
+                            <div class="graph-visual tables-main">
+
+                                     <div class="graph">
+                                        <div class="block-page">
+                    {% if msg == "done" %}
+            <div style="color:red;">Category Added</div>
+                    {% endif %}
+                    <form action="http://localhost:8000/adm/checkCate/" method="post">
+                    {% csrf_token %}
+                             <div class="vali-form">
+                                                                                        <div class="col-md-6 form-group1">
+                                                                                          <label class="control-label">Category</label>
+                                                                                          <input name="category" id="category" type="text"/>
+                                                                                        </div>
+                                                                                        
+                                                                                      
+                                                                                        <div class="col-md-12 form-group button-2">
+                                                                                          <button type="submit" class="btn btn-primary">Submit</button>
+        
+                                                                                        </div>
+                            
+                                                                                  <div class="clearfix"> </div>
+                    </div>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+
+{% endblock %}
+                                

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+        <!-- Three -->
+            <section id="banner" class="wrapper" >
+                <div class="inner" style="width:55%; border:5px 5px 5px 5px double;border-color:black;">
+
+                    <h3 style="color:white;">Trying to add new business <br/> Fill this form!!<br/><br/> </h3>
+
+                    <form action="http://localhost:8000/visiter/checkRegister/" method="post">
+                    {% csrf_token %}
+                         <div class="field">
+                            <input name="name" id="name" type="text" value="{{n}}" readonly="readonly">
+                        </div>
+                        <div class="field">
+                            <input name="prName" id="prName" type="text" placeholder="Business Name">
+                        </div>
+                        <div class="field">
+                            <input name="email" id="email" type="email" placeholder="email">
+                        </div>
+                         <div class="field">
+                            <input name="phone" id="phone" type="text" placeholder="Phone Number">
+                        </div>
+                        <div class="field">
+                             <input name="address" id="address" type="text" placeholder="address">
+                        </div>
+
+                        <div class="field">
+                            <input name="city" id="city" type="text" placeholder="city">
+                        </div>
+                       
+                         <div class="field" value="categories">
+                             <select name="category" i="category">
+                                <option selected disabled>Categories</option>
+                                {% for x in a %}
+                                <option value="{{x.cate}}">{{x.cate}}</option>
+                                {% endfor %}
+                                </select>                   
+                        </div>
+  
+                        <div class="field" >
+                        <input type="checkbox" name="own" value="own" checked>I own this business<br>
+                        <input type="checkbox" name="agree" value="agree" checked>I agree to terms and conditions <br>
+                        </div>
+                        <ul class="actions">
+                            <li><input value="ADD BUSINESS" class="button alt" type="submit"></li>
+                        </ul>
+                    </form>
+            </div>
+            </section>
+{% endblock %}
+        

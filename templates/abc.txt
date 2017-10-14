@@ -1,0 +1,6 @@
+form = ContactForm(request.POST) 
+    if form.is_valid():
+        print form.cleaned_data['my_form_field_name']
+        if myform.is_valid():
+  data = myform.cleaned_data
+  field = data['field']

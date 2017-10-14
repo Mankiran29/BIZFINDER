@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<section id="banner" class="wrapper" >
+	<div class="inner" style="width:55%; border:5px 5px 5px 5px double;border-color:black;">
+  <h3 style="color:white;">Look! Here is a description about you!<br/><br/> </h3>
+                    {{msg}}
+                    <form action="http://localhost:8000/visiter/editProf/" method="post">
+                    {% csrf_token %}
+                        <div class="field">
+                            <input name="name" id="name" type="text" value="{{m.name}}" readonly="readonly" >
+                        </div>
+                        <div class="field">
+                            <input name="firstName" id="firstName" type="text" value="{{m.firstName}}">
+                        </div>
+                        <div class="field">
+                            <input name="lastName" id="lastName" type="text" value="{{m.lastName}}">
+                        </div>
+                        <div class="field">
+                            <input name="email" id="email" type="email" value="{{m.emailM}}">
+                        </div>
+                         <div class="field">
+                            <input name="phone" id="phone" type="text" value="{{m.phoneM}}">
+                        </div>
+                        <div class="field">
+                             <input name="address" id="address" type="text" value="{{m.addressM}}">
+                        </div>
+                        <ul class="actions">
+                            <li><input value="EDIT" class="button alt" type="submit"></li>
+                
+                        </ul>
+                    </form>	
+	</div>
+        </section>
+{% endblock %}
+ 
+ 

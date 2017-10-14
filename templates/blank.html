@@ -1,0 +1,37 @@
+{%extends 'admBaseX.html' %}
+{% block content %}
+					<div class="clearfix"></div>
+					<div class="outter-wp">
+						<div class="sub-heard-part">
+							<ol class="breadcrumb m-b-0">
+								<li><a href="index.html">Home</a></li>
+								<li class="active">Blank Page</li>
+							</ol>
+						</div>
+						
+				            <div class="graph-visual tables-main">
+			                     <h2 class="inner-tittle">Blank Page</h2>
+							         <div class="graph">
+								        <div class="block-page">
+								        {% for val in m %}
+									       <ul>
+							                    <li> Owner : {{val.name}}</li>
+                                                <li>Product name: {{ val.prName}}</li>
+                                                <li>email : {{val.email}}</li>
+                                                <li> phone : {{val.phone}}</li>
+                                                <li> address :{{val.address}}</li>
+                                                <li>city: {{val.city}}</li>
+                                                <li>category:{{category}}</li>
+                                                <li>status:{{status}}</li>
+                                              
+									       </ul>
+									    {% endfor %}
+									     </div>
+												
+							         </div>
+											
+				            </div>
+                    </div>
+                    
+{% endblock %}
+								

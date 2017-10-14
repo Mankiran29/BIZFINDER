@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<section id="banner" class="wrapper" >
+	<div class="inner" style="width:55%; border:5px 5px 5px 5px double;border-color:black;">
+  <h3 style="color:white;">Look! Here is a description about you!<br/><br/> </h3>
+                    {{msg}}
+                    <form action="http://localhost:8000/visiter/changePass/" method="post">
+                    {% csrf_token %}
+                        <div class="field">
+                            <input name="passw1" id="passw1" type="password" placeholder="password">
+                        </div>
+                        <div class="field">
+                            <input name="passw2" id="passw2" type="password" placeholder="re-enter password">
+                        </div>
+                        <ul class="actions">
+                            <li><input value="EDIT" class="button alt" type="submit"></li>
+                
+                        </ul>
+                    </form>	
+	</div>
+        </section>
+{% endblock %}
+ 
+ 
